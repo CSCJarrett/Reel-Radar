@@ -43,6 +43,7 @@ Examples of unacceptable behavior include:
 * Attendance is expected for all members during team meetings with exceptions for emergences or if a member is sick
 * In case of a member being absent, they should reach out to the rest of the group for details of the meeting
 * Assignments should be split up into parts between group members before the due date
+* Team members should be asked which part of the assignment would best suit their skillset
 * Before submission, assignments should be looked over to make sure the work is of sufficient quality
 * Communication will occur over text message
 * Meeting times and locations will be decided on a case by case basis
