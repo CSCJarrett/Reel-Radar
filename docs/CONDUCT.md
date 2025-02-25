@@ -47,6 +47,9 @@ Examples of unacceptable behavior include:
 * Communication will occur over text message
 * Meeting times and locations will be decided on a case by case basis
 * In the case of a member being late, it is their responsibility to reach out and find out what they missed
+* Members should make sure they are hearing other people's perspectives and not talking over others or dominating the conversation
+* Feedback between members should be given constructively
+* Rule violations should be brought up immidiately and if repeatedly violated the product owner should be contacted
 
 ## Enforcement Responsibilities
 
@@ -72,7 +75,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-[INSERT CONTACT METHOD].
+jarrett.defreitas@uri.edu.
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
