@@ -37,6 +37,17 @@ Examples of unacceptable behavior include:
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting
 
+## Policies
+* During team meeting, phones must be away
+* Decisions will be made by majority consensus
+* Attendance is expected for all members during team meetings with exceptions for emergences or if a member is sick
+* In case of a member being absent, they should reach out to the rest of the group for details of the meeting
+* Assignments should be split up into parts between group members before the due date
+* Before submission, assignments should be looked over to make sure the work is of sufficient quality
+* Communication will occur over text message
+* Meeting times and locations will be decided on a case by case basis
+* In the case of a member being late, it is their responsibility to reach out and find out what they missed
+
 ## Enforcement Responsibilities
 
 Community leaders are responsible for clarifying and enforcing our standards of
