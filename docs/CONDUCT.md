@@ -147,12 +147,6 @@ For answers to common questions about this code of conduct, see the FAQ at
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
 
-https://drive.google.com/file/d/1eQgE0lTKMHg4biFDnnz_OSJbZB6XTHeM/view?usp=sharing 
-
-![Signature](https://drive.google.com/file/d/1VvnIy4VN5NnR_zdwBo8UsmjTNZ3zhB2J/view?usp=sharing)
-
-https://drive.google.com/uc?export=view&id=15fgNecUeHHM70mPVrX0wKyPKTo9k6klH 
-[signature.pdf](https://github.com/user-attachments/files/18965427/signature.pdf)
-
 ![](images/signatureJarrett.jpg)
+![](images/TySignature.jpg)
 
