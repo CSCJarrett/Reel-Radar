@@ -148,3 +148,5 @@ For answers to common questions about this code of conduct, see the FAQ at
 [translations]: https://www.contributor-covenant.org/translations
 
 https://drive.google.com/file/d/1eQgE0lTKMHg4biFDnnz_OSJbZB6XTHeM/view?usp=sharing 
+
+![Signature](https://drive.google.com/file/d/1VvnIy4VN5NnR_zdwBo8UsmjTNZ3zhB2J/view?usp=sharing)
