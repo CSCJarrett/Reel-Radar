@@ -150,4 +150,5 @@ For answers to common questions about this code of conduct, see the FAQ at
 ![](images/signatureJarrett.jpg)
 ![](images/TySignature.jpg)
 ![](images/signatureJonathan.jpg)
+![](images/CWSignature.jpg)
 
