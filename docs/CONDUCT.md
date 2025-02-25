@@ -154,3 +154,5 @@ https://drive.google.com/file/d/1eQgE0lTKMHg4biFDnnz_OSJbZB6XTHeM/view?usp=shari
 https://drive.google.com/uc?export=view&id=15fgNecUeHHM70mPVrX0wKyPKTo9k6klH 
 [signature.pdf](https://github.com/user-attachments/files/18965427/signature.pdf)
 
+![](images/signatureJarrett.jpg)
+
