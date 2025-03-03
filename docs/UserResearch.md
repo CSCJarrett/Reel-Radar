@@ -7,9 +7,9 @@
 * * Supporting Data: In the "How do you decide what to watch?" question many people commented that they decide what to watch based off of the mood they are in.
 * * Team Action: We could create a search function based off of peoples moods.
 * Observation 3
-* * Observation Statement:
-* * Supporting Data:
-* * Team Action (if any)
+* * Observation Statement: There is value in our product. 
+* * Supporting Data: 16% of responses said they watch movies/tv shows every day, over 50% of responses said they watch movies/tv shows a couple times per week, and 16% of responses said they watch movies/tv show once a week. 
+* * Team Action (if any): To proceed with this product idea. 
 * Observation 4
 * * Observation Statement:
 * * Supporting Data:
