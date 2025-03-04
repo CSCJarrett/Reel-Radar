@@ -10,3 +10,10 @@ Profile Setup
 * Choose username
 * Add a favorite movie/show
 * Clicking complete profile brings you to home page
+
+Home Page
+* Drop down filter button choices
+* Textfield explaining what kind of show you're looking for
+* Generate button that prompts AI with your filter/textfield
+* Limit of 3 movies/shows displayed with a picture and summary/description
+
