@@ -11,6 +11,6 @@
 * * Supporting Data: 16% of responses said they watch movies/tv shows every day, over 50% of responses said they watch movies/tv shows a couple times per week, and 16% of responses said they watch movies/tv show once a week. 
 * * Team Action (if any): To proceed with this product idea. 
 * Observation 4
-* * Observation Statement:
-* * Supporting Data:
-* * Team Action (if any)
+* * Observation Statement: Online reviews are a major factor in people's decision to watch a movie.
+* * Supporting Data: In the "How important are user-generated reviews/ratings" section, only 8% of responses gave a rating of 2 or less out of 5.
+* * Team Action (if any): We create a section where users can write reviews about movies they have watched.
