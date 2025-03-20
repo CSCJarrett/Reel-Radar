@@ -2,5 +2,4 @@
 
 Metrics:
 
-- Number of 4 and 5 star ratings: Create a screen popup that asks the user to rate the app, then track the responses.
-- Average recommendation rating: Create a screen popup that asks the user to rate the quality of the recommendation that they received.
+- NPS: Create a screen popup that asks the user to rate the app from 1-5. Convert the average of these ratings into a percentage.
