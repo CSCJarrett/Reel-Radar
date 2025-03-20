@@ -3,3 +3,4 @@
 Metrics:
 
 - NPS: Create a screen popup that asks the user to rate the app from 1-5. Convert the average of these ratings into a percentage.
+- Retention: Use Firebase analytics to track the number of user logins per week.
