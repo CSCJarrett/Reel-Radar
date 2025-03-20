@@ -6,3 +6,4 @@ Metrics:
 - Retention: Use Firebase analytics to track the number of user logins per week.
 - Adoption: Use Firebase to track the number of new profiles created weekly.
 - DAU: Use Firebase analytics to track the daily active users.
+- CTR: Use Firebase Analytics custom event to track the number of times users interact with the recommendation generation button.  
