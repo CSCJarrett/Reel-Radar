@@ -34,14 +34,24 @@ Test 1:
 
 **Variations:**  The first variation will be the control which is the current layout of our app. The second variation will have the description text under the poster instead of to the right of it when a reccomendation is generated.
 
-Test 3:
-**A/B Test Name:**  
-**User Story Number:**  
-**Metrics:**  
-**Hypothesis:**  
-**Experiment:**  
-**Variations:**  
+Test 2:  
 
+**A/B Test Name:**  One Screen Sign-up vs Onboarding.    
+
+
+**User Story Number:**  US1: User account creation. 
+
+
+**Metrics:**  This test would measure adoption.  
+
+
+**Hypothesis:**  Users like their experiences to be personalized to their interests but long account creation processes can also deter potential users.  
+
+
+**Experiment:**  50% of users will see this experiment. We would record the number of accounts created using Firebase analytics.  
+
+
+**Variations:**  We would add another page to deal with onboarding. Users will be able to create a username and profile picture, as well as information about their favorite movies/genres.  
 Test 4: 
 **A/B Test Name:**  
 **User Story Number:**  
