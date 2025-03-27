@@ -18,10 +18,20 @@ Test 1:
 **Variations:** A variation would be to have the enter key act as an alternative to the magnifier button.
 
 **A/B Test Name:**  Changing the reccomendations to display the description below the poster instead of to the side
+
+
 **User Story Number:**  US4
+
+
 **Metrics:**  Measure the NPS score and amount of reccomendations generated
+
+
 **Hypothesis:**  More visually appealing format of displaying reccomendations will be more appealing to the user and make them want to engage with the app more
+
+
 **Experiment:**  All users will be able to view the experiment. TRacking needs to be setup for the NPS and amount of times the generate button is hit.
+
+
 **Variations:**  The first variation will be the control which is the current layout of our app. The second variation will have the description text under the poster instead of to the right of it when a reccomendation is generated.
 
 Test 3:
