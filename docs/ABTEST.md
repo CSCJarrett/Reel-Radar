@@ -25,7 +25,7 @@ Test 2:
 **User Story Number:**  US4
 
 
-**Metrics:**  Measure the NPS score and amount of recommendations generated
+**Metrics:**  Measure the retention rate of users
 
 
 **Hypothesis:**  A lighter color background will be more inviting to the user and make them want to engage with the app more
