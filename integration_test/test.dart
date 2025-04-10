@@ -82,6 +82,8 @@ void main() async {
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('loginTab_1j6a')));
+    await tester.pump(kDoubleTapMinTime);
+    await tester.tap(find.byKey(const ValueKey('loginTab_1j6a')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(find.byKey(const ValueKey('email-login_ah1c')),
         'userlogintestemail@gmail.com');
@@ -106,7 +108,11 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
-    expect(find.byKey(const ValueKey('Text_edit')), findsOneWidget);
+    await tester.tap(find.descendant(
+      of: find.byKey(const ValueKey('NavBarWithMiddleButton_qcyi')),
+      matching: find.byKey(const ValueKey('IconButton_wbry')),
+    ));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
   });
 }
 

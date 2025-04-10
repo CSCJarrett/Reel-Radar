@@ -112,7 +112,7 @@ class _NavBarWithMiddleButtonWidgetState
                   logFirebaseEvent('NAV_BAR_WITH_MIDDLE_BUTTON_person_sharp_');
                   logFirebaseEvent('IconButton_navigate_to');
 
-                  context.pushNamed(ProfileWidget.routeName);
+                  context.pushNamed(ProfileDisplayWidget.routeName);
                 },
               ),
               FlutterFlowIconButton(
