@@ -129,6 +129,7 @@ class _ProfileDisplayWidgetState extends State<ProfileDisplayWidget> {
                             ),
                           ),
                           Text(
+                            key: ValueKey('Text_z6i4'),
                             '${currentUserEmail}',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
