@@ -39,7 +39,7 @@ void main() async {
     await GoogleFonts.pendingFonts();
 
     await tester.enterText(find.byKey(const ValueKey('TextField_zfe2')),
-        'Can you reccomend me a good movie?');
+        'Can you recommend me a good movie?');
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('Button_zcl7')));
