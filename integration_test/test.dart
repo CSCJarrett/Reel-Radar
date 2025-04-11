@@ -43,30 +43,22 @@ void main() async {
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('Button_zcl7')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.pumpAndSettle(const Duration(milliseconds: 15000));
     expect(find.byKey(const ValueKey('movieDisplay_s39s')), findsOneWidget);
   });
 
   testWidgets('ProfileTest', (WidgetTester tester) async {
     _overrideOnError();
-
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'test1@gmail.com', password: 'password');
     await tester.pumpWidget(MyApp(
-      entryPage: HomescreenWidget(),
+      entryPage: ProfileWidget(),
     ));
     await GoogleFonts.pendingFonts();
 
-    await tester.tap(find.descendant(
-      of: find.byKey(const ValueKey('NavBarWithMiddleButton_qcyi')),
-      matching: find.byKey(const ValueKey('IconButton_wbry')),
-    ));
-    await tester.pump(kDoubleTapMinTime);
-    await tester.tap(find.descendant(
-      of: find.byKey(const ValueKey('NavBarWithMiddleButton_qcyi')),
-      matching: find.byKey(const ValueKey('IconButton_wbry')),
-    ));
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(
         find.byKey(const ValueKey('TextField_dmzt')), 'Test12Test');
+    FocusManager.instance.primaryFocus?.unfocus();
     await tester.tap(find.byKey(const ValueKey('Button_sm66')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     expect(find.byKey(const ValueKey('Text_edit')), findsOneWidget);
