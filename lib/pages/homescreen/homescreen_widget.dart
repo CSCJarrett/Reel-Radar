@@ -100,244 +100,289 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                               ),
                         ),
                       ),
-                    Stack(
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          child: Container(
-                            width: double.infinity,
-                            child: TextFormField(
-                              key: ValueKey('TextField_zfe2'),
-                              controller: _model.textController,
-                              focusNode: _model.textFieldFocusNode,
-                              autofocus: false,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                isDense: true,
-                                alignLabelWithHint: false,
-                                hintText: 'What do you want to watch?',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Radio Canada Big',
-                                      color: FlutterFlowTheme.of(context)
-                                          .manualWhite,
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: false,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.black,
-                                    width: 3.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.black,
-                                    width: 3.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 3.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 3.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                filled: true,
-                                fillColor: Color(0xFFD72D3A),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Radio Canada Big',
-                                    color: FlutterFlowTheme.of(context)
-                                        .manualWhite,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
-                              textAlign: TextAlign.start,
-                              maxLines: 3,
-                              cursorColor:
-                                  FlutterFlowTheme.of(context).manualWhite,
-                              validator: _model.textControllerValidator
-                                  .asValidator(context),
-                            ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 80.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).manualRed,
+                          borderRadius: BorderRadius.circular(12.0),
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 3.0,
                           ),
                         ),
-                        Align(
-                          alignment: AlignmentDirectional(0.75, 1.0),
-                          child: Padding(
-                            padding: EdgeInsets.all(6.0),
-                            child: FFButtonWidget(
-                              key: ValueKey('Button_zcl7'),
-                              onPressed: () async {
-                                logFirebaseEvent('HOMESCREEN_PAGE__BTN_ON_TAP');
-                                logFirebaseEvent('Button_update_page_state');
-                                _model.title = '';
-                                _model.description = ' ';
-                                _model.poster = ' ';
-                                safeSetState(() {});
-                                logFirebaseEvent('Button_backend_call');
-                                _model.apiResult0iw = await GemeniAPICall.call(
-                                  message:
-                                      'Format the response as the title of a single movie or TV show that exists in the omdb movie api${_model.textController.text}',
-                                );
-
-                                if ((_model.apiResult0iw?.succeeded ?? true)) {
-                                  logFirebaseEvent('Button_backend_call');
-                                  _model.apiResultjkg = await OMDbCall.call(
-                                    name: GemeniAPICall.response(
-                                      (_model.apiResult0iw?.jsonBody ?? ''),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
+                                child: Container(
+                                  width: double.infinity,
+                                  child: TextFormField(
+                                    key: ValueKey('TextField_zfe2'),
+                                    controller: _model.textController,
+                                    focusNode: _model.textFieldFocusNode,
+                                    autofocus: false,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      isDense: true,
+                                      alignLabelWithHint: false,
+                                      hintText: 'What do you want to watch?',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Radio Canada Big',
+                                            color: FlutterFlowTheme.of(context)
+                                                .manualWhite,
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: false,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.black,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: Color(0xFFD72D3A),
                                     ),
-                                  );
-
-                                  if ((_model.apiResultjkg?.succeeded ??
-                                      true)) {
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Radio Canada Big',
+                                          color: FlutterFlowTheme.of(context)
+                                              .manualWhite,
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: false,
+                                        ),
+                                    textAlign: TextAlign.start,
+                                    maxLines: 3,
+                                    cursorColor: FlutterFlowTheme.of(context)
+                                        .manualWhite,
+                                    validator: _model.textControllerValidator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.75, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 12.0, 12.0),
+                                child: FFButtonWidget(
+                                  key: ValueKey('Button_zcl7'),
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'HOMESCREEN_PAGE__BTN_ON_TAP');
                                     logFirebaseEvent(
                                         'Button_update_page_state');
-                                    _model.title = OMDbCall.movieTitle(
-                                      (_model.apiResultjkg?.jsonBody ?? ''),
-                                    )!;
-                                    _model.description = OMDbCall.plotSummary(
-                                      (_model.apiResultjkg?.jsonBody ?? ''),
-                                    )!;
-                                    _model.poster = OMDbCall.moviePoster(
-                                      (_model.apiResultjkg?.jsonBody ?? ''),
-                                    )!;
+                                    _model.title = '';
+                                    _model.description = ' ';
+                                    _model.poster = ' ';
                                     safeSetState(() {});
-                                    if (valueOrDefault(
-                                            currentUserDocument
-                                                ?.presurveySearches,
-                                            0) <=
-                                        4) {
-                                      logFirebaseEvent('Button_backend_call');
+                                    logFirebaseEvent('Button_backend_call');
+                                    _model.apiResult0iw =
+                                        await GemeniAPICall.call(
+                                      message:
+                                          'Format the response as the title of a single movie or TV show that exists in the omdb movie api${_model.textController.text}',
+                                    );
 
-                                      await currentUserReference!.update({
-                                        ...mapToFirestore(
-                                          {
-                                            'presurvey_searches':
-                                                FieldValue.increment(1),
-                                          },
+                                    if ((_model.apiResult0iw?.succeeded ??
+                                        true)) {
+                                      logFirebaseEvent('Button_backend_call');
+                                      _model.apiResultjkg = await OMDbCall.call(
+                                        name: GemeniAPICall.response(
+                                          (_model.apiResult0iw?.jsonBody ?? ''),
                                         ),
-                                      });
-                                    }
-                                    if (valueOrDefault(
-                                            currentUserDocument
-                                                ?.presurveySearches,
-                                            0) ==
-                                        4) {
-                                      logFirebaseEvent('Button_bottom_sheet');
-                                      await showModalBottomSheet(
-                                        isScrollControlled: true,
-                                        backgroundColor: Colors.transparent,
-                                        enableDrag: false,
-                                        context: context,
-                                        builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              FocusScope.of(context).unfocus();
-                                              FocusManager.instance.primaryFocus
-                                                  ?.unfocus();
+                                      );
+
+                                      if ((_model.apiResultjkg?.succeeded ??
+                                          true)) {
+                                        logFirebaseEvent(
+                                            'Button_update_page_state');
+                                        _model.title = OMDbCall.movieTitle(
+                                          (_model.apiResultjkg?.jsonBody ?? ''),
+                                        )!;
+                                        _model.description =
+                                            OMDbCall.plotSummary(
+                                          (_model.apiResultjkg?.jsonBody ?? ''),
+                                        )!;
+                                        _model.poster = OMDbCall.moviePoster(
+                                          (_model.apiResultjkg?.jsonBody ?? ''),
+                                        )!;
+                                        safeSetState(() {});
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.presurveySearches,
+                                                0) <=
+                                            4) {
+                                          logFirebaseEvent(
+                                              'Button_backend_call');
+
+                                          await currentUserReference!.update({
+                                            ...mapToFirestore(
+                                              {
+                                                'presurvey_searches':
+                                                    FieldValue.increment(1),
+                                              },
+                                            ),
+                                          });
+                                        }
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.presurveySearches,
+                                                0) ==
+                                            4) {
+                                          logFirebaseEvent(
+                                              'Button_bottom_sheet');
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () {
+                                                  FocusScope.of(context)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Container(
+                                                    height: 500.0,
+                                                    child:
+                                                        FiveStarSurveyWidget(),
+                                                  ),
+                                                ),
+                                              );
                                             },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: Container(
-                                                height: 500.0,
-                                                child: FiveStarSurveyWidget(),
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+                                        }
+                                      } else {
+                                        logFirebaseEvent(
+                                            'Button_show_snack_bar');
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              (_model.apiResultjkg?.bodyText ??
+                                                  ''),
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                               ),
                                             ),
-                                          );
-                                        },
-                                      ).then((value) => safeSetState(() {}));
-                                    }
-                                  } else {
-                                    logFirebaseEvent('Button_show_snack_bar');
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          (_model.apiResultjkg?.bodyText ?? ''),
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
                                           ),
+                                        );
+                                      }
+                                    } else {
+                                      logFirebaseEvent('Button_show_snack_bar');
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            (_model.apiResult0iw?.bodyText ??
+                                                ''),
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
                                         ),
-                                        duration: Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                  }
-                                } else {
-                                  logFirebaseEvent('Button_show_snack_bar');
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        (_model.apiResult0iw?.bodyText ?? ''),
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                      ),
-                                      duration: Duration(milliseconds: 4000),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
-                                    ),
-                                  );
-                                }
+                                      );
+                                    }
 
-                                safeSetState(() {});
-                              },
-                              text: '',
-                              icon: Icon(
-                                Icons.search_sharp,
-                                size: 35.0,
-                              ),
-                              options: FFButtonOptions(
-                                width: 62.9,
-                                height: 61.3,
-                                padding: EdgeInsets.all(16.0),
-                                iconAlignment: IconAlignment.start,
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 5.0, 0.0, 0.0),
-                                color: Color(0xFFD72D3A),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Inter Tight',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
+                                    safeSetState(() {});
+                                  },
+                                  text: '',
+                                  icon: Icon(
+                                    Icons.search_sharp,
+                                    size: 35.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 70.0,
+                                    height: 61.3,
+                                    padding: EdgeInsets.all(16.0),
+                                    iconAlignment: IconAlignment.start,
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    color: Color(0xFFD72D3A),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(0.0),
+                                      topRight: Radius.circular(0.0),
                                     ),
-                                elevation: 0.0,
-                                borderSide: BorderSide(
-                                  width: 3.0,
-                                ),
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(0.0),
-                                  bottomRight: Radius.circular(0.0),
-                                  topLeft: Radius.circular(10.0),
-                                  topRight: Radius.circular(0.0),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                     Padding(
                       padding:
