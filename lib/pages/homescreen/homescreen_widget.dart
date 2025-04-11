@@ -104,7 +104,7 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: Container(
-                        width: double.infinity,
+                        width: 800.0,
                         height: 80.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).manualRed,
@@ -356,11 +356,11 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                   ),
                                   options: FFButtonOptions(
                                     width: 70.0,
-                                    height: 61.3,
+                                    height: 50.0,
                                     padding: EdgeInsets.all(16.0),
                                     iconAlignment: IconAlignment.start,
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: Color(0xFFD72D3A),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall

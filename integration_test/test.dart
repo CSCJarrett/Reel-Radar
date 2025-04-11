@@ -38,12 +38,11 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.enterText(find.byKey(const ValueKey('TextField_zfe2')),
         'Can you recommend me a good movie?');
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.tap(find.byKey(const ValueKey('Button_zcl7')));
-    await tester.pump(kDoubleTapMinTime);
     await tester.tap(find.byKey(const ValueKey('Button_zcl7')));
     await tester.pumpAndSettle(const Duration(milliseconds: 15000));
     expect(find.byKey(const ValueKey('movieDisplay_s39s')), findsOneWidget);
