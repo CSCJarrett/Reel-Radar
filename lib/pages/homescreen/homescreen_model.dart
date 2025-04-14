@@ -1,8 +1,8 @@
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/movie_display/movie_display_widget.dart';
 import '/pages/nav_bar_with_middle_button/nav_bar_with_middle_button_widget.dart';
+import '/pages/recommendation_display/recommendation_display_widget.dart';
 import 'homescreen_widget.dart' show HomescreenWidget;
 import 'package:flutter/material.dart';
 
@@ -31,14 +31,15 @@ class HomescreenModel extends FlutterFlowModel<HomescreenWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
-  // Model for movieDisplay component.
-  late MovieDisplayModel movieDisplayModel;
+  // Model for recommendationDisplay component.
+  late RecommendationDisplayModel recommendationDisplayModel;
   // Model for NavBarWithMiddleButton component.
   late NavBarWithMiddleButtonModel navBarWithMiddleButtonModel;
 
   @override
   void initState(BuildContext context) {
-    movieDisplayModel = createModel(context, () => MovieDisplayModel());
+    recommendationDisplayModel =
+        createModel(context, () => RecommendationDisplayModel());
     navBarWithMiddleButtonModel =
         createModel(context, () => NavBarWithMiddleButtonModel());
   }
@@ -48,7 +49,7 @@ class HomescreenModel extends FlutterFlowModel<HomescreenWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
 
-    movieDisplayModel.dispose();
+    recommendationDisplayModel.dispose();
     navBarWithMiddleButtonModel.dispose();
   }
 }

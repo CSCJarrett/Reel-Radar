@@ -167,8 +167,11 @@ class _NavBarWithMiddleButtonWidgetState
                   color: Color(0xFF9299A1),
                   size: 24.0,
                 ),
-                onPressed: () {
-                  print('IconButton pressed ...');
+                onPressed: () async {
+                  logFirebaseEvent('NAV_BAR_WITH_MIDDLE_BUTTON_favorite_roun');
+                  logFirebaseEvent('IconButton_navigate_to');
+
+                  context.pushNamed(BacklogWidget.routeName);
                 },
               ),
               FlutterFlowIconButton(

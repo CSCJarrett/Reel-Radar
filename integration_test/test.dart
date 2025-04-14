@@ -45,7 +45,8 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('Button_zcl7')));
     await tester.pumpAndSettle(const Duration(milliseconds: 15000));
-    expect(find.byKey(const ValueKey('movieDisplay_s39s')), findsOneWidget);
+    expect(find.byKey(const ValueKey('recommendationDisplay_s39s')),
+        findsOneWidget);
   });
 
   testWidgets('ProfileTest', (WidgetTester tester) async {
@@ -90,6 +91,36 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     expect(find.byKey(const ValueKey('NavBarWithMiddleButton_qcyi')),
         findsWidgets);
+  });
+
+  testWidgets('User Signup Test', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(MyApp(
+      entryPage: HomePageWidget(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('signupTab_sl4o')));
+    await tester.pump(kDoubleTapMinTime);
+    await tester.tap(find.byKey(const ValueKey('signupTab_sl4o')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.enterText(find.byKey(const ValueKey('email-Signup_26iu')),
+        'usersignuptestemail@gmail.com');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.enterText(find.byKey(const ValueKey('password-Signup_yvyh')),
+        'usersignuptestpassword');
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.enterText(
+        find.byKey(const ValueKey('confPassword-Signup_w3hx')),
+        'usersignuptestpassword');
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('signupButton')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    expect(find.byKey(const ValueKey('TextField_dmzt')), findsWidgets);
   });
 
   testWidgets('Testing Backend Calls', (WidgetTester tester) async {

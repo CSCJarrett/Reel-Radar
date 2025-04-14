@@ -106,6 +106,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: ProfileDisplayWidget.routeName,
           path: ProfileDisplayWidget.routePath,
           builder: (context, params) => ProfileDisplayWidget(),
+        ),
+        FFRoute(
+          name: BacklogWidget.routeName,
+          path: BacklogWidget.routePath,
+          builder: (context, params) => BacklogWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

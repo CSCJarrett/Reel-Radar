@@ -120,6 +120,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   FlutterFlowTheme.of(context).manualWhite,
                               tabs: [
                                 Tab(
+                                  key: ValueKey('signupTab_sl4o'),
                                   text: 'Signup',
                                 ),
                                 Tab(
@@ -149,6 +150,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         Container(
                                           width: 280.0,
                                           child: TextFormField(
+                                            key: ValueKey('email-Signup_26iu'),
                                             controller: _model
                                                 .emailSignupTextController,
                                             focusNode:
@@ -244,6 +246,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         Container(
                                           width: 280.0,
                                           child: TextFormField(
+                                            key: ValueKey(
+                                                'password-Signup_yvyh'),
                                             controller: _model
                                                 .passwordSignupTextController,
                                             focusNode:
@@ -352,6 +356,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         Container(
                                           width: 280.0,
                                           child: TextFormField(
+                                            key: ValueKey(
+                                                'confPassword-Signup_w3hx'),
                                             controller: _model
                                                 .confPasswordSignupTextController,
                                             focusNode: _model
@@ -688,6 +694,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: FFButtonWidget(
+                              key: ValueKey('signupButton'),
                               onPressed: () async {
                                 logFirebaseEvent(
                                     'HOME_PAGE_PAGE_signupButton_ON_TAP');

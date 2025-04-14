@@ -1,11 +1,14 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'movie_display_model.dart';
-export 'movie_display_model.dart';
+import 'recommendation_display_model.dart';
+export 'recommendation_display_model.dart';
 
-class MovieDisplayWidget extends StatefulWidget {
-  const MovieDisplayWidget({
+class RecommendationDisplayWidget extends StatefulWidget {
+  const RecommendationDisplayWidget({
     super.key,
     String? title,
     String? description,
@@ -19,11 +22,13 @@ class MovieDisplayWidget extends StatefulWidget {
   final String poster;
 
   @override
-  State<MovieDisplayWidget> createState() => _MovieDisplayWidgetState();
+  State<RecommendationDisplayWidget> createState() =>
+      _RecommendationDisplayWidgetState();
 }
 
-class _MovieDisplayWidgetState extends State<MovieDisplayWidget> {
-  late MovieDisplayModel _model;
+class _RecommendationDisplayWidgetState
+    extends State<RecommendationDisplayWidget> {
+  late RecommendationDisplayModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -34,7 +39,7 @@ class _MovieDisplayWidgetState extends State<MovieDisplayWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MovieDisplayModel());
+    _model = createModel(context, () => RecommendationDisplayModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -52,7 +57,7 @@ class _MovieDisplayWidgetState extends State<MovieDisplayWidget> {
       padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
       child: Container(
         width: double.infinity,
-        height: 325.0,
+        height: 400.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).manualRed,
           borderRadius: BorderRadius.circular(24.0),
@@ -105,6 +110,34 @@ class _MovieDisplayWidgetState extends State<MovieDisplayWidget> {
                   ),
                 ),
               ].divide(SizedBox(width: 12.0)),
+            ),
+            FFButtonWidget(
+              onPressed: () async {
+                logFirebaseEvent('RECOMMENDATION_DISPLAY_SAVE_TO_BACKLOG_B');
+                logFirebaseEvent('Button_backend_call');
+
+                await SavedMoviesRecord.collection
+                    .doc()
+                    .set(createSavedMoviesRecordData(
+                      title: widget.title,
+                      moviePoster: widget.poster,
+                      userID: currentUserReference,
+                    ));
+              },
+              text: 'Save to Backlog',
+              options: FFButtonOptions(
+                height: 40.0,
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).manualBlackGrey,
+                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                      fontFamily: 'Inter Tight',
+                      color: Colors.white,
+                      letterSpacing: 0.0,
+                    ),
+                elevation: 0.0,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
             ),
           ].divide(SizedBox(height: 12.0)),
         ),

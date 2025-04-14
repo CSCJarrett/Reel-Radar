@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'movie_display_widget.dart' show MovieDisplayWidget;
+import 'backlog_item_widget.dart' show BacklogItemWidget;
 import 'package:flutter/material.dart';
 
-class MovieDisplayModel extends FlutterFlowModel<MovieDisplayWidget> {
+class BacklogItemModel extends FlutterFlowModel<BacklogItemWidget> {
   @override
   void initState(BuildContext context) {}
 

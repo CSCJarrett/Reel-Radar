@@ -7,8 +7,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/five_star_survey/five_star_survey_widget.dart';
-import '/pages/movie_display/movie_display_widget.dart';
 import '/pages/nav_bar_with_middle_button/nav_bar_with_middle_button_widget.dart';
+import '/pages/recommendation_display/recommendation_display_widget.dart';
 import 'package:flutter/material.dart';
 import 'homescreen_model.dart';
 export 'homescreen_model.dart';
@@ -221,7 +221,7 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                     _model.apiResult0iw =
                                         await GemeniAPICall.call(
                                       message:
-                                          'Format the response as the title of a single movie or TV show that exists in the omdb movie api${_model.textController.text}',
+                                          'Format teh response as a title of a single movie or TV show. Generate the response as a recommendation given from the following prompt.${_model.textController.text}',
                                     );
 
                                     if ((_model.apiResult0iw?.succeeded ??
@@ -352,6 +352,7 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                   text: '',
                                   icon: Icon(
                                     Icons.search_sharp,
+                                    color: Colors.black,
                                     size: 35.0,
                                   ),
                                   options: FFButtonOptions(
@@ -479,10 +480,10 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               child: wrapWithModel(
-                                model: _model.movieDisplayModel,
+                                model: _model.recommendationDisplayModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: MovieDisplayWidget(
-                                  key: ValueKey('movieDisplay_s39s'),
+                                child: RecommendationDisplayWidget(
+                                  key: ValueKey('recommendationDisplay_s39s'),
                                   title: _model.title,
                                   description: _model.description,
                                   poster: _model.poster,
