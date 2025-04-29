@@ -1,15 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/components/five_star_survey_widget.dart';
+import '/components/nav_bar_with_middle_button_widget.dart';
+import '/components/recommendation_display_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/five_star_survey/five_star_survey_widget.dart';
-import '/pages/nav_bar_with_middle_button/nav_bar_with_middle_button_widget.dart';
-import '/pages/recommendation_display/recommendation_display_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'homescreen_model.dart';
 export 'homescreen_model.dart';
 
@@ -96,7 +97,6 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                 fontFamily: 'Radio Canada Big',
                                 color: FlutterFlowTheme.of(context).manualWhite,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                         ),
                       ),
@@ -142,7 +142,6 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                                 .manualWhite,
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -189,7 +188,6 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                               .manualWhite,
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     textAlign: TextAlign.start,
                                     maxLines: 3,
@@ -366,9 +364,26 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Inter Tight',
+                                          font: GoogleFonts.interTight(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           color: Colors.white,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                     elevation: 0.0,
                                     borderRadius: BorderRadius.only(
@@ -408,7 +423,6 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                       FlutterFlowTheme.of(context).manualWhite,
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                             hintText: 'Select number of suggestions',
                             icon: Icon(
@@ -444,7 +458,6 @@ class _HomescreenWidgetState extends State<HomescreenWidget> {
                                       FlutterFlowTheme.of(context).manualWhite,
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                             hintText: 'Filter by Genre',
                             icon: Icon(

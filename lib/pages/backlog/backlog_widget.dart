@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/backlog_item_widget.dart';
+import '/components/nav_bar_with_middle_button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/backlog_item/backlog_item_widget.dart';
-import '/pages/nav_bar_with_middle_button/nav_bar_with_middle_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'backlog_model.dart';
 export 'backlog_model.dart';
@@ -70,7 +70,6 @@ class _BacklogWidgetState extends State<BacklogWidget> {
                                 fontFamily: 'Gabarito',
                                 color: FlutterFlowTheme.of(context).manualWhite,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                     ),
                   ),

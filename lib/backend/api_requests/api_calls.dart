@@ -11,14 +11,18 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 class OMDbCall {
   static Future<ApiCallResponse> call({
     String? name = '',
+    String? key,
   }) async {
+    key ??= FFDevEnvironmentValues().APIKey;
+
     return ApiManager.instance.makeApiCall(
       callName: 'OMDb',
-      apiUrl: 'https://www.omdbapi.com/?apikey=46596b8c&t',
+      apiUrl: 'https://www.omdbapi.com/',
       callType: ApiCallType.GET,
       headers: {},
       params: {
         't': name,
+        'apikey': key,
       },
       returnBody: true,
       encodeBodyUtf8: false,
@@ -43,6 +47,10 @@ class OMDbCall {
       castToType<String>(getJsonField(
         response,
         r'''$.Poster''',
+      ));
+  static String? response(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.Response''',
       ));
 }
 

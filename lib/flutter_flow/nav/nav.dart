@@ -111,6 +111,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: BacklogWidget.routeName,
           path: BacklogWidget.routePath,
           builder: (context, params) => BacklogWidget(),
+        ),
+        FFRoute(
+          name: ReviewsWidget.routeName,
+          path: ReviewsWidget.routePath,
+          builder: (context, params) => ReviewsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

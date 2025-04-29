@@ -1,8 +1,8 @@
 import '/backend/api_requests/api_calls.dart';
+import '/components/nav_bar_with_middle_button_widget.dart';
+import '/components/recommendation_display_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/nav_bar_with_middle_button/nav_bar_with_middle_button_widget.dart';
-import '/pages/recommendation_display/recommendation_display_widget.dart';
 import 'homescreen_widget.dart' show HomescreenWidget;
 import 'package:flutter/material.dart';
 
