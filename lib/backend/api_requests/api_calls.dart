@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,6 +8,41 @@ import 'api_manager.dart';
 export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
+
+class GemeniAPICall {
+  static Future<ApiCallResponse> call({
+    String? prompt = 'No prompt provided',
+    double? temperature = 0.5,
+  }) async {
+    final ffApiRequestBody = '''
+
+{
+  "prompt": "${escapeStringForJson(prompt)}",
+  "temperature": "${temperature}"
+}
+''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'gemeniAPI',
+      apiUrl: 'https://myai-34oi3laeiq-uc.a.run.app',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? response(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.response_text''',
+      ));
+}
 
 class OMDbCall {
   static Future<ApiCallResponse> call({
@@ -51,37 +87,6 @@ class OMDbCall {
   static String? response(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.Response''',
-      ));
-}
-
-class GemeniAPICall {
-  static Future<ApiCallResponse> call({
-    String? message = 'No prompt provided',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "prompt": "${escapeStringForJson(message)}"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'gemeniAPI',
-      apiUrl: 'https://myai-sbhzsx45sq-uc.a.run.app',
-      callType: ApiCallType.POST,
-      headers: {},
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static String? response(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.response_text''',
       ));
 }
 

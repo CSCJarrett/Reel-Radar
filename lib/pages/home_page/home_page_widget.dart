@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -80,7 +79,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
               child: Container(
-                width: 400.0,
+                width: MediaQuery.sizeOf(context).width >= 500.0
+                    ? 500.0
+                    : MediaQuery.sizeOf(context).width,
                 decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -619,15 +620,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 .confPasswordSignupTextControllerValidator
                                                 .asValidator(context),
                                           ),
-                                        ),
-                                        FlutterFlowAdBanner(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: 50.0,
-                                          showsTestAd: true,
-                                          androidAdUnitID:
-                                              'ca-app-pub-6850881499596171/8873267636',
                                         ),
                                       ].divide(SizedBox(height: 10.0)),
                                     ),

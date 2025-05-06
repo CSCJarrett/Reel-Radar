@@ -57,7 +57,7 @@ class _BacklogItemWidgetState extends State<BacklogItemWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+        padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 24.0),
         child: Container(
           decoration: BoxDecoration(),
           child: Column(
@@ -68,87 +68,88 @@ class _BacklogItemWidgetState extends State<BacklogItemWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        width: 250.0,
-                        decoration: BoxDecoration(),
-                        child: Text(
-                          widget.backlogItemDoc!.title,
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Radio Canada Big',
-                                color: FlutterFlowTheme.of(context).manualWhite,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                              ),
-                        ),
+                  Flexible(
+                    child: Container(
+                      decoration: BoxDecoration(),
+                      child: Text(
+                        widget.backlogItemDoc!.title,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Radio Canada Big',
+                              color: FlutterFlowTheme.of(context).manualWhite,
+                              fontSize: 20.0,
+                              letterSpacing: 0.0,
+                            ),
                       ),
-                    ],
+                    ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      FlutterFlowIconButton(
-                        borderRadius: 8.0,
-                        buttonSize: 40.0,
-                        fillColor: FlutterFlowTheme.of(context).manualBlackGrey,
-                        icon: Icon(
-                          Icons.star,
-                          color: FlutterFlowTheme.of(context).info,
-                          size: 24.0,
+                  Flexible(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        FlutterFlowIconButton(
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor:
+                              FlutterFlowTheme.of(context).manualBlackGrey,
+                          icon: Icon(
+                            Icons.star,
+                            color: FlutterFlowTheme.of(context).info,
+                            size: 24.0,
+                          ),
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'BACKLOG_ITEM_COMP_star_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_bottom_sheet');
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: CreateReviewWidget(
+                                    backlogEntry: widget.backlogItemDoc!,
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
                         ),
-                        onPressed: () async {
-                          logFirebaseEvent('BACKLOG_ITEM_COMP_star_ICN_ON_TAP');
-                          logFirebaseEvent('IconButton_bottom_sheet');
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            enableDrag: false,
-                            context: context,
-                            builder: (context) {
-                              return Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: CreateReviewWidget(
-                                  backlogEntry: widget.backlogItemDoc!,
-                                ),
-                              );
-                            },
-                          ).then((value) => safeSetState(() {}));
-                        },
-                      ),
-                      FlutterFlowIconButton(
-                        borderRadius: 8.0,
-                        buttonSize: 40.0,
-                        fillColor: FlutterFlowTheme.of(context).manualBlackGrey,
-                        icon: Icon(
-                          Icons.delete,
-                          color: FlutterFlowTheme.of(context).info,
-                          size: 24.0,
+                        FlutterFlowIconButton(
+                          borderRadius: 8.0,
+                          buttonSize: 40.0,
+                          fillColor:
+                              FlutterFlowTheme.of(context).manualBlackGrey,
+                          icon: Icon(
+                            Icons.delete,
+                            color: FlutterFlowTheme.of(context).info,
+                            size: 24.0,
+                          ),
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'BACKLOG_ITEM_COMP_delete_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_bottom_sheet');
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: DeleteBacklogPopupWidget(
+                                    backlogDoc:
+                                        widget.backlogItemDoc!.reference,
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
                         ),
-                        onPressed: () async {
-                          logFirebaseEvent(
-                              'BACKLOG_ITEM_COMP_delete_ICN_ON_TAP');
-                          logFirebaseEvent('IconButton_bottom_sheet');
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            enableDrag: false,
-                            context: context,
-                            builder: (context) {
-                              return Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: DeleteBacklogPopupWidget(
-                                  backlogDoc: widget.backlogItemDoc!.reference,
-                                ),
-                              );
-                            },
-                          ).then((value) => safeSetState(() {}));
-                        },
-                      ),
-                    ].divide(SizedBox(width: 12.0)),
+                      ].divide(SizedBox(width: 12.0)),
+                    ),
                   ),
                 ].divide(SizedBox(width: 12.0)),
               ),

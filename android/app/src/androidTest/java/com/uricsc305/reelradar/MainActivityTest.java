@@ -1,4 +1,4 @@
-package com.mycompany.reelradar;
+package com.uricsc305.reelradar;
 
 import androidx.test.rule.ActivityTestRule;
 import dev.flutter.plugins.integration_test.FlutterTestRunner;

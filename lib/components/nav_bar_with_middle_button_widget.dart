@@ -91,106 +91,88 @@ class _NavBarWithMiddleButtonWidgetState
               ),
             ],
           ),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              FlutterFlowIconButton(
-                key: ValueKey('IconButton_wbry'),
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 50.0,
-                icon: Icon(
-                  Icons.person_sharp,
-                  color: Color(0xFF9299A1),
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('NAV_BAR_WITH_MIDDLE_BUTTON_person_sharp_');
-                  logFirebaseEvent('IconButton_navigate_to');
-
-                  context.pushNamed(ProfileDisplayWidget.routeName);
-                },
-              ),
-              FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 50.0,
-                icon: Icon(
-                  Icons.home,
-                  color: Color(0xFF9299A1),
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('NAV_BAR_WITH_MIDDLE_BUTTON_home_ICN_ON_T');
-                  logFirebaseEvent('IconButton_navigate_to');
-
-                  context.pushNamed(HomescreenWidget.routeName);
-                },
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 4.0,
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      fillColor: Color(0xFFD72D3A),
-                      icon: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 30.0,
-                      ),
-                      onPressed: () {
-                        print('MiddleButton pressed ...');
-                      },
-                    ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                FlutterFlowIconButton(
+                  key: ValueKey('IconButton_wbry'),
+                  borderColor: Colors.transparent,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 50.0,
+                  icon: Icon(
+                    Icons.person_sharp,
+                    color: Color(0xFF9299A1),
+                    size: 24.0,
                   ),
-                ],
-              ),
-              FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 50.0,
-                icon: Icon(
-                  Icons.favorite_rounded,
-                  color: Color(0xFF9299A1),
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('NAV_BAR_WITH_MIDDLE_BUTTON_favorite_roun');
-                  logFirebaseEvent('IconButton_navigate_to');
+                  onPressed: () async {
+                    logFirebaseEvent(
+                        'NAV_BAR_WITH_MIDDLE_BUTTON_person_sharp_');
+                    logFirebaseEvent('IconButton_navigate_to');
 
-                  context.pushNamed(BacklogWidget.routeName);
-                },
-              ),
-              FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 50.0,
-                icon: Icon(
-                  Icons.star,
-                  color: Color(0xFF9299A1),
-                  size: 24.0,
+                    context.pushNamed(ProfileDisplayWidget.routeName);
+                  },
                 ),
-                onPressed: () async {
-                  logFirebaseEvent('NAV_BAR_WITH_MIDDLE_BUTTON_reviewsButton');
-                  logFirebaseEvent('reviewsButton_navigate_to');
+                FlutterFlowIconButton(
+                  borderColor: Colors.transparent,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 50.0,
+                  icon: Icon(
+                    Icons.home,
+                    color: Color(0xFF9299A1),
+                    size: 24.0,
+                  ),
+                  onPressed: () async {
+                    logFirebaseEvent(
+                        'NAV_BAR_WITH_MIDDLE_BUTTON_home_ICN_ON_T');
+                    logFirebaseEvent('IconButton_navigate_to');
 
-                  context.pushNamed(ReviewsWidget.routeName);
-                },
-              ),
-            ],
+                    context.pushNamed(HomescreenWidget.routeName);
+                  },
+                ),
+                FlutterFlowIconButton(
+                  borderColor: Colors.transparent,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 50.0,
+                  icon: Icon(
+                    Icons.favorite_rounded,
+                    color: Color(0xFF9299A1),
+                    size: 24.0,
+                  ),
+                  onPressed: () async {
+                    logFirebaseEvent(
+                        'NAV_BAR_WITH_MIDDLE_BUTTON_favorite_roun');
+                    logFirebaseEvent('IconButton_navigate_to');
+
+                    context.pushNamed(BacklogWidget.routeName);
+                  },
+                ),
+                FlutterFlowIconButton(
+                  borderColor: Colors.transparent,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 50.0,
+                  icon: Icon(
+                    Icons.star,
+                    color: Color(0xFF9299A1),
+                    size: 24.0,
+                  ),
+                  onPressed: () async {
+                    logFirebaseEvent(
+                        'NAV_BAR_WITH_MIDDLE_BUTTON_reviewsButton');
+                    logFirebaseEvent('reviewsButton_navigate_to');
+
+                    context.pushNamed(ReviewsWidget.routeName);
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -51,94 +51,92 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
         backgroundColor: FlutterFlowTheme.of(context).manualBlackGrey,
         body: SafeArea(
           top: true,
-          child: Container(
-            decoration: BoxDecoration(),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Reviews',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Radio Canada Big',
-                          color: FlutterFlowTheme.of(context).manualWhite,
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: 650.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).manualBlackGrey,
+          child: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Container(
+              width: MediaQuery.sizeOf(context).width >= 500.0
+                  ? 500.0
+                  : MediaQuery.sizeOf(context).width,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+              ),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                      child: Text(
+                        'Reviews',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Radio Canada Big',
+                              color: FlutterFlowTheme.of(context).manualWhite,
+                              fontSize: 32.0,
+                              letterSpacing: 0.0,
+                            ),
                       ),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            StreamBuilder<List<ReviewsRecord>>(
-                              stream: queryReviewsRecord(
-                                queryBuilder: (reviewsRecord) =>
-                                    reviewsRecord.where(
-                                  'userID',
-                                  isEqualTo: currentUserReference,
-                                ),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
+                    ),
+                    Flexible(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 12.0, 0.0),
+                        child: StreamBuilder<List<ReviewsRecord>>(
+                          stream: queryReviewsRecord(
+                            queryBuilder: (reviewsRecord) =>
+                                reviewsRecord.where(
+                              'userID',
+                              isEqualTo: currentUserReference,
+                            ),
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).primary,
                                     ),
-                                  );
-                                }
-                                List<ReviewsRecord> listViewReviewsRecordList =
-                                    snapshot.data!;
+                                  ),
+                                ),
+                              );
+                            }
+                            List<ReviewsRecord> listViewReviewsRecordList =
+                                snapshot.data!;
 
-                                return ListView.separated(
-                                  padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: listViewReviewsRecordList.length,
-                                  separatorBuilder: (_, __) =>
-                                      SizedBox(height: 12.0),
-                                  itemBuilder: (context, listViewIndex) {
-                                    final listViewReviewsRecord =
-                                        listViewReviewsRecordList[
-                                            listViewIndex];
-                                    return ReviewItemWidget(
-                                      key: Key(
-                                          'Keyqmu_${listViewIndex}_of_${listViewReviewsRecordList.length}'),
-                                      reviewDoc: listViewReviewsRecord,
-                                    );
-                                  },
+                            return ListView.separated(
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: listViewReviewsRecordList.length,
+                              separatorBuilder: (_, __) =>
+                                  SizedBox(height: 12.0),
+                              itemBuilder: (context, listViewIndex) {
+                                final listViewReviewsRecord =
+                                    listViewReviewsRecordList[listViewIndex];
+                                return ReviewItemWidget(
+                                  key: Key(
+                                      'Keyqmu_${listViewIndex}_of_${listViewReviewsRecordList.length}'),
+                                  reviewDoc: listViewReviewsRecord,
                                 );
                               },
-                            ),
-                          ].divide(SizedBox(height: 12.0)),
+                            );
+                          },
                         ),
                       ),
                     ),
-                  ),
-                  wrapWithModel(
-                    model: _model.navBarWithMiddleButtonModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: NavBarWithMiddleButtonWidget(),
-                  ),
-                ],
+                    wrapWithModel(
+                      model: _model.navBarWithMiddleButtonModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: NavBarWithMiddleButtonWidget(),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -93,19 +95,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: HomescreenWidget.routeName,
-          path: HomescreenWidget.routePath,
-          builder: (context, params) => HomescreenWidget(),
-        ),
-        FFRoute(
           name: ProfileWidget.routeName,
           path: ProfileWidget.routePath,
           builder: (context, params) => ProfileWidget(),
-        ),
-        FFRoute(
-          name: ProfileDisplayWidget.routeName,
-          path: ProfileDisplayWidget.routePath,
-          builder: (context, params) => ProfileDisplayWidget(),
         ),
         FFRoute(
           name: BacklogWidget.routeName,
@@ -116,6 +108,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: ReviewsWidget.routeName,
           path: ReviewsWidget.routePath,
           builder: (context, params) => ReviewsWidget(),
+        ),
+        FFRoute(
+          name: ProfileDisplayWidget.routeName,
+          path: ProfileDisplayWidget.routePath,
+          builder: (context, params) => ProfileDisplayWidget(),
+        ),
+        FFRoute(
+          name: HomescreenWidget.routeName,
+          path: HomescreenWidget.routePath,
+          builder: (context, params) => HomescreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -235,6 +237,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -253,6 +256,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }
