@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'profile_display_widget.dart' show ProfileDisplayWidget;
+import 'delete_review_popup_widget.dart' show DeleteReviewPopupWidget;
 import 'package:flutter/material.dart';
 
-class ProfileDisplayModel extends FlutterFlowModel<ProfileDisplayWidget> {
+class DeleteReviewPopupModel extends FlutterFlowModel<DeleteReviewPopupWidget> {
   @override
   void initState(BuildContext context) {}
 

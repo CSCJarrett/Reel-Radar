@@ -1,34 +1,34 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/backlog_item_widget.dart';
 import '/components/nav_bar_with_middle_button_widget.dart';
+import '/components/review_item_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'backlog_model.dart';
-export 'backlog_model.dart';
+import 'reviews_model.dart';
+export 'reviews_model.dart';
 
-class BacklogWidget extends StatefulWidget {
-  const BacklogWidget({super.key});
+class ReviewsWidget extends StatefulWidget {
+  const ReviewsWidget({super.key});
 
-  static String routeName = 'backlog';
-  static String routePath = '/backlog';
+  static String routeName = 'reviews';
+  static String routePath = '/reviews';
 
   @override
-  State<BacklogWidget> createState() => _BacklogWidgetState();
+  State<ReviewsWidget> createState() => _ReviewsWidgetState();
 }
 
-class _BacklogWidgetState extends State<BacklogWidget> {
-  late BacklogModel _model;
+class _ReviewsWidgetState extends State<ReviewsWidget> {
+  late ReviewsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => BacklogModel());
+    _model = createModel(context, () => ReviewsModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'backlog'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'reviews'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -48,7 +48,7 @@ class _BacklogWidgetState extends State<BacklogWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: FlutterFlowTheme.of(context).manualBlackGrey,
         body: SafeArea(
           top: true,
           child: Align(
@@ -57,39 +57,36 @@ class _BacklogWidgetState extends State<BacklogWidget> {
               width: MediaQuery.sizeOf(context).width >= 500.0
                   ? 500.0
                   : MediaQuery.sizeOf(context).width,
-              decoration: BoxDecoration(),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
-                    child: Padding(
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+              ),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                       child: Text(
-                        'Your Backlog',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Gabarito',
+                        'Reviews',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Radio Canada Big',
                               color: FlutterFlowTheme.of(context).manualWhite,
+                              fontSize: 32.0,
                               letterSpacing: 0.0,
                             ),
                       ),
                     ),
-                  ),
-                  Flexible(
-                    child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                    Flexible(
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 0.0, 12.0, 0.0),
-                        child: StreamBuilder<List<SavedMoviesRecord>>(
-                          stream: querySavedMoviesRecord(
-                            queryBuilder: (savedMoviesRecord) =>
-                                savedMoviesRecord.where(
+                        child: StreamBuilder<List<ReviewsRecord>>(
+                          stream: queryReviewsRecord(
+                            queryBuilder: (reviewsRecord) =>
+                                reviewsRecord.where(
                               'userID',
                               isEqualTo: currentUserReference,
                             ),
@@ -109,27 +106,23 @@ class _BacklogWidgetState extends State<BacklogWidget> {
                                 ),
                               );
                             }
-                            List<SavedMoviesRecord>
-                                listViewSavedMoviesRecordList = snapshot.data!;
+                            List<ReviewsRecord> listViewReviewsRecordList =
+                                snapshot.data!;
 
                             return ListView.separated(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,
-                              itemCount: listViewSavedMoviesRecordList.length,
+                              itemCount: listViewReviewsRecordList.length,
                               separatorBuilder: (_, __) =>
                                   SizedBox(height: 12.0),
                               itemBuilder: (context, listViewIndex) {
-                                final listViewSavedMoviesRecord =
-                                    listViewSavedMoviesRecordList[
-                                        listViewIndex];
-                                return Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: BacklogItemWidget(
-                                    key: Key(
-                                        'Keyuoj_${listViewIndex}_of_${listViewSavedMoviesRecordList.length}'),
-                                    backlogItemDoc: listViewSavedMoviesRecord,
-                                  ),
+                                final listViewReviewsRecord =
+                                    listViewReviewsRecordList[listViewIndex];
+                                return ReviewItemWidget(
+                                  key: Key(
+                                      'Keyqmu_${listViewIndex}_of_${listViewReviewsRecordList.length}'),
+                                  reviewDoc: listViewReviewsRecord,
                                 );
                               },
                             );
@@ -137,13 +130,13 @@ class _BacklogWidgetState extends State<BacklogWidget> {
                         ),
                       ),
                     ),
-                  ),
-                  wrapWithModel(
-                    model: _model.navBarWithMiddleButtonModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: NavBarWithMiddleButtonWidget(),
-                  ),
-                ].divide(SizedBox(height: 12.0)),
+                    wrapWithModel(
+                      model: _model.navBarWithMiddleButtonModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: NavBarWithMiddleButtonWidget(),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

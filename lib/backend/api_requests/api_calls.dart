@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,17 +9,56 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
+class GemeniAPICall {
+  static Future<ApiCallResponse> call({
+    String? prompt = 'No prompt provided',
+    double? temperature = 0.5,
+  }) async {
+    final ffApiRequestBody = '''
+
+{
+  "prompt": "${escapeStringForJson(prompt)}",
+  "temperature": "${temperature}"
+}
+''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'gemeniAPI',
+      apiUrl: 'https://myai-34oi3laeiq-uc.a.run.app',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? response(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.response_text''',
+      ));
+}
+
 class OMDbCall {
   static Future<ApiCallResponse> call({
     String? name = '',
+    String? key,
   }) async {
+    key ??= FFDevEnvironmentValues().APIKey;
+
     return ApiManager.instance.makeApiCall(
       callName: 'OMDb',
-      apiUrl: 'https://www.omdbapi.com/?apikey=46596b8c&t',
+      apiUrl: 'https://www.omdbapi.com/',
       callType: ApiCallType.GET,
       headers: {},
       params: {
         't': name,
+        'apikey': key,
       },
       returnBody: true,
       encodeBodyUtf8: false,
@@ -44,36 +84,9 @@ class OMDbCall {
         response,
         r'''$.Poster''',
       ));
-}
-
-class GemeniAPICall {
-  static Future<ApiCallResponse> call({
-    String? message = 'No prompt provided',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "prompt": "${escapeStringForJson(message)}"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'gemeniAPI',
-      apiUrl: 'https://myai-sbhzsx45sq-uc.a.run.app',
-      callType: ApiCallType.POST,
-      headers: {},
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
   static String? response(dynamic response) => castToType<String>(getJsonField(
         response,
-        r'''$.response_text''',
+        r'''$.Response''',
       ));
 }
 

@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
@@ -60,6 +61,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           child: Align(
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Container(
+              width: MediaQuery.sizeOf(context).width >= 500.0
+                  ? 500.0
+                  : MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -76,7 +80,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               fontFamily: 'Radio Canada Big',
                               color: FlutterFlowTheme.of(context).manualWhite,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                       Align(
@@ -210,7 +213,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               fontFamily: 'Radio Canada Big',
                               color: FlutterFlowTheme.of(context).manualWhite,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                       Container(
@@ -226,18 +228,44 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                             hintText: 'Enter Username..',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   color:
                                       FlutterFlowTheme.of(context).manualWhite,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -277,7 +305,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 color: FlutterFlowTheme.of(context).manualWhite,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                           cursorColor: FlutterFlowTheme.of(context).manualWhite,
                           validator: _model.textControllerValidator
@@ -310,9 +337,22 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       color: FlutterFlowTheme.of(context).manualRed,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Inter Tight',
+                                font: GoogleFonts.interTight(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: Colors.white,
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                       elevation: 0.0,
                       borderSide: BorderSide(

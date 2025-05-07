@@ -137,7 +137,7 @@ void main() async {
       matching: find.byKey(const ValueKey('IconButton_wbry')),
     ));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    expect(find.byKey(const ValueKey('Text_z6i4')), findsOneWidget);
+    expect(find.byKey(const ValueKey('Text_s640')), findsOneWidget);
   });
 }
 

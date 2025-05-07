@@ -68,7 +68,6 @@ class _FiveStarSurveyWidgetState extends State<FiveStarSurveyWidget> {
                       fontFamily: 'Radio Canada Big',
                       color: FlutterFlowTheme.of(context).manualBlackGrey,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
               RatingBar.builder(
@@ -163,7 +162,6 @@ class _FiveStarSurveyWidgetState extends State<FiveStarSurveyWidget> {
                             fontFamily: 'Gabarito',
                             color: FlutterFlowTheme.of(context).manualWhite,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),
