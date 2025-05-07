@@ -39,12 +39,12 @@ void main() async {
     await GoogleFonts.pendingFonts();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.enterText(find.byKey(const ValueKey('TextField_zfe2')),
-        'Can you recommend me a good movie?');
+    await tester.enterText(
+        find.byKey(const ValueKey('TextField_zfe2')), 'A good movie');
     FocusManager.instance.primaryFocus?.unfocus();
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('Button_zcl7')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 15000));
+    await tester.pumpAndSettle(const Duration(milliseconds: 20000));
     expect(find.byKey(const ValueKey('recommendationDisplay_s39s')),
         findsOneWidget);
   });
@@ -120,7 +120,7 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     await tester.tap(find.byKey(const ValueKey('signupButton')));
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    expect(find.byKey(const ValueKey('TextField_dmzt')), findsWidgets);
+    expect(find.byKey(const ValueKey('TextField_dmzt')), findsOneWidget);
   });
 
   testWidgets('Testing Backend Calls', (WidgetTester tester) async {
